@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <style type="text/css">
+  .slideBox{
+    display:none;
+  }
+
+  ul.menu li{
+    display: inline;
+    float:left;
+    width:80px;
+    height:20px;
+  }
+
+  ul.menu li a{
+    display:block;
+  }
+
+  ul.menu{
+    zoom:1;
+  }
+
+  ul.menu:after {
+    height:0;
+    visibility:hidden;
+    content:".";
+    display:block;
+    clear:both;
+  }
+  </style>
+</head>
+<body>
+
+<ul class="menu">
+  <li class="open"><a href="#">AAA</a>
+    <ul class="slideBox">
+      <li><a href="#">a1</a></li>
+      <li><a href="#">a2</a></li>
+      <li><a href="#">a3</a></li>
+      <li><a href="#">a4</a></li>
+    </ul>
+  </li>
+  <li class="open"><a href="#">BBB</a>
+    <ul class="slideBox">
+      <li><a href="#">b1</a></li>
+      <li><a href="#">b2</a></li>
+      <li><a href="#">b3</a></li>
+      <li><a href="#">b4</a></li>
+    </ul>
+  </li>
+  <li class="open"><a href="#">CCC</a>
+    <ul class="slideBox">
+      <li><a href="#">c1</a></li>
+      <li><a href="#">c2</a></li>
+      <li><a href="#">c3</a></li>
+      <li><a href="#">c4</a></li>
+    </ul>
+  </li>
+</ul>
+
+<script type="text/javascript">
+$(function(){
+  $("ul.slideBox").hide();
+  $(".open").hover(function(){
+    $(".slideBox:not(:animated)",this).slideToggle("fast");
+  });
+});
+</script>
+
+</body>
+</html>
